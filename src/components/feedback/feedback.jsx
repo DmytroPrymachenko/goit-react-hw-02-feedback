@@ -1,5 +1,5 @@
 import { Component } from "react";
-import { ButtonBad, ButtonGood, ButtonNeutral, FeedbackDiv, Feedback_Title } from "./feedback_Staled";
+import { Button, ButtonBad, ButtonDiv, ButtonGood, ButtonNeutral, FeedbackDiv, Feedback_Title, NotFeedbackGiven, StatisticCategori, StatisticElement, StatisticItem, StatisticList, Statisticsh2 } from "./feedback_Staled";
 
 
 export class Feedback extends Component {
@@ -40,15 +40,13 @@ export class Feedback extends Component {
 
             return <FeedbackDiv>
                 <Feedback_Title>Please leave feedback</Feedback_Title>
-                <ButtonGood onClick={this.Goodlick}>Good</ButtonGood>
-                <ButtonNeutral onClick={this.NeutralClick}>Neutral</ButtonNeutral>
-                <ButtonBad onClick={this.BadClick}>Bad</ButtonBad>
-            
-                <h2>Not feedback given</h2>
-
-
-                
-                  
+                <ButtonDiv>
+                <Button onClick={this.Goodlick}>Good</Button>
+                <Button onClick={this.NeutralClick}>Neutral</Button>
+                <Button onClick={this.BadClick}>Bad</Button>
+                </ButtonDiv>
+            <Statisticsh2>Statistics</Statisticsh2>   
+                <NotFeedbackGiven>Not feedback given</NotFeedbackGiven>      
             </FeedbackDiv>
         }
 
@@ -56,11 +54,35 @@ export class Feedback extends Component {
             return (
                 <FeedbackDiv>
                     <Feedback_Title>Please leave feedback</Feedback_Title>
-                    <ButtonGood onClick={this.Goodlick}>Good</ButtonGood>
-                    <ButtonNeutral onClick={this.NeutralClick}>Neutral</ButtonNeutral>
-                    <ButtonBad onClick={this.BadClick}>Bad</ButtonBad>
-                    {good} {neutral} {bad} {totalFeedback}
-                    <h1>{good}</h1>
+                    <ButtonDiv>
+                <Button onClick={this.Goodlick}>Good</Button>
+                <Button onClick={this.NeutralClick}>Neutral</Button>
+                <Button onClick={this.BadClick}>Bad</Button>
+                </ButtonDiv>
+                    <Statisticsh2>Statistics</Statisticsh2>
+                    
+                    <StatisticList>
+  <StatisticItem>
+    <StatisticCategori>good:</StatisticCategori>
+    <StatisticElement>{good}</StatisticElement>
+  </StatisticItem>
+  <StatisticItem>
+    <StatisticCategori>neutral:</StatisticCategori>
+    <StatisticElement>{neutral}</StatisticElement>
+  </StatisticItem>
+  <StatisticItem>
+    <StatisticCategori>bad:</StatisticCategori>
+    <StatisticElement>{bad}</StatisticElement>
+  </StatisticItem>
+  <StatisticItem>
+    <StatisticCategori>totalFeedback:</StatisticCategori>
+    <StatisticElement>{totalFeedback}</StatisticElement>
+  </StatisticItem>
+  <StatisticItem>
+    <StatisticCategori>positiveFeedback:</StatisticCategori>
+  <StatisticElement>{positiveFeedback}</StatisticElement>
+  </StatisticItem>
+</StatisticList>
                 </FeedbackDiv>
             );
         }
