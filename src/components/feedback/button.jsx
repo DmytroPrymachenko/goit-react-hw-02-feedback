@@ -7,9 +7,9 @@ export default class Button extends Component {
       <div>
         <Feedback_Title>Please leave feedback</Feedback_Title>
         <ButtonDiv>
-          <Button onClick={this.Goodlick}>Good</Button>
-          <Button onClick={this.NeutralClick}>Neutral</Button>
-          <Button onClick={this.BadClick}>Bad</Button>
+          <Button onClick={this.props.Goodlick}>Good</Button>
+          <Button onClick={this.props.NeutralClick}>Neutral</Button>
+          <Button onClick={this.props.BadClick}>Bad</Button>
         </ButtonDiv>
       </div>
     );
