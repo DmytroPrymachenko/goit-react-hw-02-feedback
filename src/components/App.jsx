@@ -1,4 +1,6 @@
+import Button from './feedback/button.jsx';
 import { Feedback, feedback } from './feedback/feedback.jsx';
+import { FeedbackDiv } from './feedback/feedback_Staled.jsx';
 
 export const App = () => {
   return (
@@ -9,11 +11,13 @@ export const App = () => {
         justifyContent: 'center',
         alignItems: 'center',
         fontSize: 40,
-        color: '#010101'
+        color: '#010101',
       }}
     >
-      <Feedback></Feedback>
-      
+      <FeedbackDiv>
+        <Button></Button>
+        <Feedback></Feedback>
+      </FeedbackDiv>
     </div>
   );
 };
