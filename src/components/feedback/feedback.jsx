@@ -1,7 +1,7 @@
 import { Component } from 'react';
 import { NotFeedbackGiven, Statisticsh2 } from './feedback_Staled';
 import Statistic from './statistic';
-import Button from './button';
+
 import Buttons from './button';
 
 export class Feedback extends Component {

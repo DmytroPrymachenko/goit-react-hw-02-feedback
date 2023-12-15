@@ -1,5 +1,4 @@
-import Button from './feedback/button.jsx';
-import { Feedback, feedback } from './feedback/feedback.jsx';
+import { Feedback } from './feedback/feedback.jsx';
 import { FeedbackDiv } from './feedback/feedback_Staled.jsx';
 
 export const App = () => {

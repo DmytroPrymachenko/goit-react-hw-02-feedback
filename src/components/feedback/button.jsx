@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import { Button, ButtonDiv, Feedback_Title } from './feedback_Staled';
+import { Button, ButtonDiv, FeedbackTitle } from './feedback_Staled';
 
 export default class Buttons extends Component {
   render() {
     return (
       <div>
-        <Feedback_Title>Please leave feedback</Feedback_Title>
+        <FeedbackTitle>Please leave feedback</FeedbackTitle>
         <ButtonDiv>
           <Button onClick={this.props.onGoodClick}>Good</Button>
           <Button onClick={this.props.onNeutralClick}>Neutral</Button>
