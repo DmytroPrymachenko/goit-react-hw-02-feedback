@@ -1,6 +1,8 @@
 import { Component } from 'react';
 import { NotFeedbackGiven, Statisticsh2 } from './feedback_Staled';
 import Statistic from './statistic';
+import Button from './button';
+import Buttons from './button';
 
 export class Feedback extends Component {
   state = {
@@ -37,6 +39,11 @@ export class Feedback extends Component {
     if (totalFeedback <= 0) {
       return (
         <div>
+          <Buttons
+            onGoodClick={this.Goodlick}
+            onNeutralClick={this.NeutralClick}
+            onBadClick={this.BadClick}
+          />
           <Statisticsh2>Statistics</Statisticsh2>
           <NotFeedbackGiven>Not feedback given</NotFeedbackGiven>
         </div>
@@ -45,6 +52,11 @@ export class Feedback extends Component {
 
     return (
       <div>
+        <Buttons
+          onGoodClick={this.Goodlick}
+          onNeutralClick={this.NeutralClick}
+          onBadClick={this.BadClick}
+        />
         <Statisticsh2>Statistics</Statisticsh2>
         <Statistic
           good={good}
