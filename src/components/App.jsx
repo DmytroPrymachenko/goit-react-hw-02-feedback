@@ -14,8 +14,7 @@ export const App = () => {
       }}
     >
       <FeedbackDiv>
-        {/* <Button></Button> */}
-        <Feedback></Feedback>
+        <Feedback />
       </FeedbackDiv>
     </div>
   );

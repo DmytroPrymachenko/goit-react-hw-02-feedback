@@ -36,20 +36,6 @@ export class Feedback extends Component {
     const totalFeedback = this.countTotalFeedback();
     const positiveFeedback = this.countPositiveFeedbackPercentage();
 
-    if (totalFeedback <= 0) {
-      return (
-        <div>
-          <Buttons
-            onGoodClick={this.Goodlick}
-            onNeutralClick={this.NeutralClick}
-            onBadClick={this.BadClick}
-          />
-          <Statisticsh2>Statistics</Statisticsh2>
-          <NotFeedbackGiven>Not feedback given</NotFeedbackGiven>
-        </div>
-      );
-    }
-
     return (
       <div>
         <Buttons
@@ -57,14 +43,20 @@ export class Feedback extends Component {
           onNeutralClick={this.NeutralClick}
           onBadClick={this.BadClick}
         />
+
         <Statisticsh2>Statistics</Statisticsh2>
-        <Statistic
-          good={good}
-          neutral={neutral}
-          bad={bad}
-          totalFeedback={totalFeedback}
-          positiveFeedback={positiveFeedback}
-        />
+        {totalFeedback <= 0 && (
+          <NotFeedbackGiven>Not feedback given</NotFeedbackGiven>
+        )}
+        {totalFeedback > 0 && (
+          <Statistic
+            good={good}
+            neutral={neutral}
+            bad={bad}
+            totalFeedback={totalFeedback}
+            positiveFeedback={positiveFeedback}
+          />
+        )}
       </div>
     );
   }
