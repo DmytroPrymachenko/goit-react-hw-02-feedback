@@ -11,14 +11,21 @@ export class Feedback extends Component {
     bad: 0,
   };
 
-  Goodlick = () => {
-    this.setState(prev => ({ good: prev.good + 1 }));
-  };
-  NeutralClick = () => {
-    this.setState(prev => ({ neutral: prev.neutral + 1 }));
-  };
-  BadClick = () => {
-    this.setState(prev => ({ bad: prev.bad + 1 }));
+  handlerClick = e => {
+    const { name } = e.currentTarget;
+
+    switch (name) {
+      case 'good':
+        this.setState(prevState => ({ good: prevState.good + 1 }));
+        break;
+      case 'neutral':
+        this.setState(prevState => ({ neutral: prevState.neutral + 1 }));
+        break;
+      case 'bad':
+        this.setState(prevState => ({ bad: prevState.bad + 1 }));
+        break;
+      default:
+    }
   };
 
   countTotalFeedback = () => {
@@ -35,14 +42,11 @@ export class Feedback extends Component {
     const { good, neutral, bad } = this.state;
     const totalFeedback = this.countTotalFeedback();
     const positiveFeedback = this.countPositiveFeedbackPercentage();
+    const options = ['Good', 'Neutral', 'Bad'];
 
     return (
       <div>
-        <Buttons
-          onGoodClick={this.Goodlick}
-          onNeutralClick={this.NeutralClick}
-          onBadClick={this.BadClick}
-        />
+        <Buttons options={options} onLeaveFeedback={this.handlerClick} />
 
         <Statisticsh2>Statistics</Statisticsh2>
         {totalFeedback <= 0 && (

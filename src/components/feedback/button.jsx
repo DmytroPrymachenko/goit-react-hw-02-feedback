@@ -7,9 +7,15 @@ export default class Buttons extends Component {
       <div>
         <FeedbackTitle>Please leave feedback</FeedbackTitle>
         <ButtonDiv>
-          <Button onClick={this.props.onGoodClick}>Good</Button>
-          <Button onClick={this.props.onNeutralClick}>Neutral</Button>
-          <Button onClick={this.props.onBadClick}>Bad</Button>
+          {this.props.options.map(el => (
+            <Button
+              key={crypto.randomUUID()}
+              onClick={this.props.onLeaveFeedback}
+              name={el.toLowerCase()}
+            >
+              {el}
+            </Button>
+          ))}
         </ButtonDiv>
       </div>
     );
